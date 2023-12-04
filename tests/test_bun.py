@@ -1,13 +1,4 @@
-from praktikum.bun import Bun
-import pytest
-
-
 class TestBun:
-
-    @pytest.fixture
-    def create_bun(self):
-        bun = Bun('Сырная булочка', 1.15)
-        return bun
 
     def test_bun_init_true(self, create_bun):
         assert create_bun.name == 'Сырная булочка'

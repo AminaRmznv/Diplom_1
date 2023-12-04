@@ -1,4 +1,3 @@
-from unittest.mock import Mock
 from unittest.mock import patch
 from praktikum.bun import Bun
 from praktikum.burger import Burger
@@ -14,10 +13,9 @@ class TestBurger:
 
     def test_set_buns_success(self):
         burger = Burger()
-        bun_mock = Mock()
-        bun_mock.name = "Булка"
-        burger.set_buns(bun_mock)
-        assert burger.bun == bun_mock
+        bun = Bun("Булка", 1.0)
+        burger.set_buns(bun)
+        assert burger.bun == bun
         assert burger.bun.name == "Булка"
 
     def test_add_ingredient_success(self):
